@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER CON MENÚ -->
+<header class="header">
+    <div class="logo">
+        <h1>🎮 GameZone</h1>
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+
+    <li><a href="juegos.html">Juegos</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+
+        </ul>
+    </nav>
+   
+    <!-- Botón carrito -->
+    <button class="cart-btn" onclick="toggleCart()">
+        🛒 Carrito (<span id="cart-count">0</span>)
+    </button>
+
+    <!-- Botón menú móvil -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
+</header>
+
+<!-- BANNER -->
+<section class="banner">
+    <video autoplay loop muted class="banner-video" 
+    src="images/WhatsApp Video 2026-01-18 at 9.43.08 AM.mp4"></video>
+    <div class="banner-text">
+          <div class="header-card"></div>
+          <h1>Compra tu <span>juego</span> <br> favorito aquí</h1>
+
+        <p>Videojuegos que te llevan a otro nivel
+        Compra fácil, rápido y seguro</p>
+    </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products">
+    <h2>Catálogo</h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="images/g4.jpg">
+            <h3>Fornite</h3>
+            <p>$50</p>
+            <button onclick="addToCart('Fornite', 50)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="images/g1.jpg">
+            <h3>Call of Duty</h3>
+            <p>$60</p>
+            <button onclick="addToCart('Call of Duty', 60)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="images/l3.jpg">
+            <h3>Clah Royal</h3>
+            <p>$40</p>
+            <button onclick="addToCart('Clas Royal', 40)">Agregar</button>
+        </div>
+        <div class="card">
+            <img src="images/g3.jpg">
+            <h3>Half reach</h3>
+            <p>$70</p>
+            <button onclick="addToCart('half ', 70)">Agregar</button>
+    </div>
+        <div class="card">
+            <img src="images/g2.jpg">
+            <h3>Battle Field</h3>
+            <p>$30</p>
+            <button onclick="addToCart('Battle', 30)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="images/g5.jpg">
+            <h3>CTR</h3>
+            <p>$20</p>
+            <button onclick="addToCart('CTR', 20)">Agregar</button>
+        </div>
+         <div class="card">
+            <img src="images/l2.jpg">
+            <h3>Free Fire</h3>
+            <p>$20</p>
+            <button onclick="addToCart('free', 20)">Agregar</button>
+
+        </div>
+        <div class="card">
+            <img src="images/l5.jpg">
+            <h3>Crash</h3>
+            <p>$15</p>
+            <button onclick="addToCart('crash', 15)">Agregar</button>
+
+        </div>
+        <div class="card">
+            <img src="images/l6.jpg">
+            <h3>Gears of war</h3>
+            <p>$40</p>
+            <button onclick="addToCart('war', 40)">Agregar</button>
+
+        </div>
+        <div class="card">
+            <img src="images/l8.jpg">
+            <h3>Cyber punk</h3>
+            <p>$10</p>
+            <button onclick="addToCart('cyber', 10)">Agregar</button>
+
+        </div>
+        <div class="card">
+            <img src="images/mine.jpg">
+            <h3>Minecraft</h3>
+            <p>$30</p>
+            <button onclick="addToCart('mine', 30)">Agregar</button>
+
+        </div>
+        <div class="card">
+            <img src="images/sonic.jpg">
+            <h3>Sonic</h3>
+            <p>$20</p>
+            <button onclick="addToCart('sonic', 20)">Agregar</button>
+
+        </div>
+        <div class="card">
+            <img src="images/spider.jpg">
+            <h3>Spider-man</h3>
+            <p>$10</p>
+            <button onclick="addToCart('free', 10)">Agregar</button>
+
+        </div>
+        <div class="card">
+            <img src="images/zelda-breath-of-the-wild_r19a.1920.webp">
+            <h3>Zelda</h3>
+            <p>$25</p>
+            <button onclick="addToCart('free', 25)">Agregar</button>
+
+        </div>
+
+
+
+
+    </div>
+</section>
+
+<!-- CARRITO -->
+<div class="cart" id="cart">
+    <h2>🛒 Carrito</h2>
+    <ul id="cart-items"></ul>
+    <h3>Total: $<span id="total">0</span></h3>
+    <button class="pay-btn" onclick="openPayment()">Pagar ahora</button>
+    
+</div>
+
+
+<div class="payment" id="payment">
+    <div class="payment-box">
+        <div class="checkout">
+    <h2>Pago</h2>
+    <p class="secure">Todas las transacciones son seguras y están encriptadas.</p>
+
+    <div class="card-box">
+        <div class="card-header">
+                  <span>Tarjeta de crédito</span>
+            <div class="logos">
+                <img src="https://img.icons8.com/color/48/visa.png"/>
+                <img src="https://img.icons8.com/color/48/mastercard.png"/>
+                <img src="https://img.icons8.com/color/48/amex.png"/>
+            </div>
+        </div>
+
+        <input type="text" placeholder="Número de tarjeta">
+        <div class="row">
+            <input type="text" placeholder="MM / AA">
+            <input type="text" placeholder="CVV">
+        </div>
+        <input type="text" placeholder="Nombre del titular">
+
+        <label class="checkbox">
+            <input type="checkbox" checked>
+            Usar la dirección de envío como dirección de facturación
+        </label>
+    </div>
+
+        <button onclick="processPayment()">Confirmar pago</button>
+        <button class="cancel" onclick="closePayment()">Cancelar</button>
+    </div>
+</div>
+</div>
+
+
+
+<footer>
+  <div style="text-align: center; padding: 20px; background-color: #222; color: #fff;">
+    <p><strong>GameZone</strong> &copy; 2026 — Tu tienda gamer de confianza</p>
+    <p>Contacto: +505 8478 3673 | Jinotepe, Nicaragua</p>
+    <p>Gerente : gamezone@ejemplo.com</p>
+  </div>
+
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

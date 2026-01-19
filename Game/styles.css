@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #a6c4e383;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #c751e892;
+    color: white;
+    padding: 15px 40px;
+    position: relative;
+}
+
+.header .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.header .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header .nav-links li a:hover {
+    color: #080808;
+}
+
+/* BOTÓN MENÚ MÓVIL */
+.menu-toggle {
+    display: none;
+    background: #38bdf8;
+    border: none;
+    padding: 8px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #020617;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+.cart-btn {
+    background: #38bdf8;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* BANNER */
+.banner {
+   position: relative;
+    height: 300px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    overflow: hidden;
+}
+.banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+}
+.banner-text {
+    background: rgba(219, 216, 216, 0.445);
+    color: rgb(10, 10, 10);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    margin-left: 50px; 
+  margin-top: 80px; 
+    
+}
+
+/* PRODUCTOS */
+.products {
+    padding: 40px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 220px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit:cover;
+
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    background: #020617;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* CARRITO */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    box-shadow: -5px 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart ul {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.cart li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.remove-btn {
+    background: #e11d48;
+    border: none;
+    color: white;
+    padding: 2px 6px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.remove-btn:hover {
+    background: #be123c;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 10px;
+    background: #38bdf8;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* PASARELA */
+.payment {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-box {
+    background: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.payment-box input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.secure {
+    font-size: 13px;
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.card-box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-box button {
+    width: 100%;
+    padding: 10px;
+    background: #38bdf8;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cancel {
+    background: #e11d48 !important;
+    margin-top: 8px;
+}
+/* CONTACTO */
+.contact-hero {
+    background: linear-gradient(to right, #020617, #0f172a);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    
+}
+
+.contact-form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: #38bdf8;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.contact-info {
+    max-width: 300px;
+    text-align: center;
+    
+}
+
+.contact-info h3 {
+    margin-bottom: 10px;
+}
+
+/* HERO JUEGOS */
+.games-hero {
+    background: linear-gradient(to right, #020617, #0f172a);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* GRID DE JUEGOS */
+.games {
+    padding: 40px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 en 3 */
+    gap: 30px;
+    justify-items: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 en tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .games-grid {
+        grid-template-columns: 1fr; /* 1 en celular */
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner {
+        height: 220px;
+        padding: 20px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .cart {
+        width: 100%;
+    }
+}
